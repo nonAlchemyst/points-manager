@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">points-manager</string>
+    <string name="app_name">MapApp</string>
+
+    //menu
+    <string name="savePointString">Сохранить координаты</string>
+    <string name="pointsListString">Список точек</string>
+
+    // create point dialog
+    <string name="coordinatesTitle">Координаты</string>
+    <string name="latitudeEdit">Широта</string>
+    <string name="longitudeEdit">Долгота</string>
+    <string name="saveBtn">Сохранить</string>
+
+    // points list
+    <string name="item_title">Точка %1s</string>
+    <string name="item_coords">%1s° %2s°</string>
 </resources>
