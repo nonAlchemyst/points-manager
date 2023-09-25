@@ -64,7 +64,7 @@ class CreatePointViewModel(
                 block.invoke(it!!)
                 true
             } else {
-                _message.value = Event("Широта введена неверно")
+                _message.value = Event("Долгота введена неверно")
                 false
             }
         }
