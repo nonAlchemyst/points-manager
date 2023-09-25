@@ -48,8 +48,8 @@ class MapViewModel(
 
     fun navigateToDialog(point: Point) {
         navigate(R.id.action_mapFragment_to_createPointDialogFragment, bundleOf(
-            CreatePointDialogFragment.ARG_LATITUDE to point.latitude.toString().substring(0, 11),
-            CreatePointDialogFragment.ARG_LONGITUDE to point.longitude.toString().substring(0, 11)
+            CreatePointDialogFragment.ARG_LATITUDE to point.latitude.toString().trySubstring(0, 11),
+            CreatePointDialogFragment.ARG_LONGITUDE to point.longitude.toString().trySubstring(0, 11)
         ))
     }
 
@@ -61,5 +61,14 @@ class MapViewModel(
             require(modelClass == MapViewModel::class.java)
             return MapViewModel(useCase) as T
         }
+    }
+
+    fun String.trySubstring(startIndex: Int, endIndex: Int): String {
+        val end = if(this.lastIndex > endIndex) {
+            endIndex
+        } else {
+            this.lastIndex
+        }
+        return this.substring(startIndex, end)
     }
 }
